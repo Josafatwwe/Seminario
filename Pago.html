@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pantalla de Pago</title>
+    
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            margin: 0; 
+            padding: 20px; 
+            max-width: 450px; 
+            margin-left: auto;
+            margin-right: auto;
+            color: black;
+        }
+
+        .encabezado { display: flex; align-items: center; margin-bottom: 10px; }
+        .boton-volver { 
+            background-color: #f0f0f0; border: none; width: 40px; height: 40px; 
+            border-radius: 50%; font-size: 18px; cursor: pointer; 
+            display: flex; justify-content: center; align-items: center; 
+            color: black; text-decoration: none;
+        }
+
+        .titulo-pago { text-align: center; font-size: 26px; margin: 10px 0; }
+        .linea-separadora { border: top; border-top: 2px solid black; margin-bottom: 20px; }
+
+        .opcion-pago { margin-bottom: 20px; cursor: pointer; }
+        .titulo-opcion { font-size: 14px; margin-bottom: 10px; font-weight: normal; }
+        .imagen-metodo { height: 100px; object-fit: contain; display: block; }
+        .linea-delgada { border-top: 1px solid black; margin-top: 15px; }
+
+        .formulario-datos { 
+            display: none; 
+            background-color: #f9f9f9; 
+            padding: 15px; 
+            border-radius: 8px; 
+            margin-top: 10px; 
+            border: 1px solid #ddd;
+        }
+        .input-campo {
+            width: 100%; padding: 10px; margin-bottom: 10px; 
+            border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box;
+        }
+        .fila-inputs { display: flex; gap: 10px; }
+
+        .boton-pagar { 
+            background-color: black; color: white; border: none; padding: 15px; 
+            width: 100%; border-radius: 25px; font-size: 18px; font-weight: bold; 
+            cursor: pointer; margin-top: 20px;
+        }
+        .boton-pagar:hover { background-color: #333; }
+
+
+        .mensaje-exito {
+            display: none;
+            background-color: #f0f0f0; color: #333;
+            text-align: center; padding: 25px; margin-top: 20px;
+            font-size: 22px; font-weight: bold; border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    
+
+    <div class="encabezado">
+        <button class="boton-volver" onclick="window.location.href='Compra.html'">←</button>
+    </div>
+
+    <h1 class="titulo-pago">PAGO</h1>
+    <div class="linea-separadora"></div>
+
+    <div class="opcion-pago">
+        <div class="titulo-opcion">TARJETA DE CREDITO</div>
+        <img src="img/Tarjetacredito.png" alt="Tarjeta de Crédito" class="imagen-metodo" onclick="mostrarFormulario('tarjeta')">
+        
+        <div id="form-tarjeta" class="formulario-datos">
+            <input type="text" class="input-campo" placeholder="Número de la tarjeta" maxlength="16">
+            <input type="text" class="input-campo" placeholder="Nombre del titular">
+            <div class="fila-inputs">
+                <input type="text" class="input-campo" placeholder="MM/AA" maxlength="5">
+                <input type="password" class="input-campo" placeholder="CVV" maxlength="3">
+            </div>
+        </div>
+    </div>
+
+    <div class="linea-delgada"></div>
+
+    <div class="opcion-pago">
+        <div class="titulo-opcion">PAYPAL</div>
+        <img src="img/Paypal.png" alt="PayPal" class="imagen-metodo" onclick="mostrarFormulario('paypal')">
+        
+        <div id="form-paypal" class="formulario-datos">
+            <p style="margin-top: 0; font-size: 14px; color: #555;">Inicia sesión con tu cuenta:</p>
+            <input type="email" class="input-campo" placeholder="Correo electrónico">
+            <input type="password" class="input-campo" placeholder="Contraseña">
+        </div>
+    </div>
+
+    <div class="linea-delgada"></div>
+
+    <button class="boton-pagar" onclick="procesarPago()">PAGAR</button>
+
+    <div id="pantalla-exito" class="mensaje-exito">
+        PAGO EXITOSO
+    </div>
+
+    <script>
+        function mostrarFormulario(metodo) {
+            document.getElementById('form-tarjeta').style.display = 'none';
+            document.getElementById('form-paypal').style.display = 'none';
+
+            if (metodo === 'tarjeta') {
+                document.getElementById('form-tarjeta').style.display = 'block';
+            } else if (metodo === 'paypal') {
+                document.getElementById('form-paypal').style.display = 'block';
+            }
+        }
+
+        function procesarPago() {
+
+            let mensaje = document.getElementById('pantalla-exito');
+            mensaje.style.display = 'block';
+
+            document.querySelector('.boton-pagar').style.display = 'none';
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pantalla de Pago Exitoso</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: white;
+            color: black;
+        }
+
+        .contenedor-movil {
+            max-width: 400px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .boton-volver {
+            background-color: #f0f0f0;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: none;
+            cursor: pointer;
+            font-size: 20px;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+
+        .titulo-principal {
+            text-align: center;
+            font-size: 32px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        .linea-division {
+            border: none;
+            border-top: 2px solid black;
+            margin: 15px 0;
+            width: 100%;
+        }
+
+        .bloque-opcion {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .texto-tarjeta {
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .img-tarjeta {
+            width: 180px; 
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .img-paypal {
+            width: 130px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .boton-pagar-negro {
+            background-color: black;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            padding: 15px;
+            width: 100%;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 30px;
+            letter-spacing: 1px;
+        }
+
+        .cuadro-exito {
+            background-color: #f2f2f2; 
+            color: #222222; 
+            text-align: center;
+            padding: 40px 20px; 
+            font-size: 26px; 
+            font-weight: bold; 
+            margin-top: 20px; 
+            letter-spacing: 1px; 
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contenedor-movil">
+        
+      <button class="boton-volver" onclick="window.location.href='Pago.html'">←</button>
+
+        <h1 class="titulo-principal">PAGO</h1>
+        
+        <hr class="linea-division">
+
+        <div class="bloque-opcion">
+            <div class="texto-tarjeta">TARJETA DE CREDITO</div>
+            <img src="img/Tarjetacredito.png" alt="Tarjetas de Crédito" class="img-tarjeta">
+        </div>
+
+        <hr class="linea-division">
+
+        <div class="bloque-opcion">
+            <div class="texto-tarjeta">PAYPAL</div>
+            <img src="img/Paypal.png" alt="PayPal" class="img-paypal">
+        </div>
+
+        <hr class="linea-division">
+
+
+
+        <div class="cuadro-exito">
+            PAGO EXITOSO
+        </div>
+
+    </div>
+
+</body>
+</html>

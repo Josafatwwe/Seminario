@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Inicio de Sesión</title>
+    
+    <style>
+        body {
+            background-color: #4a0a14; 
+            color: white; 
+            font-family: Arial, sans-serif; 
+            
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh; 
+            margin: 0;
+        }
+
+        .caja-formulario {
+            background-color: #2d050b; 
+            padding: 40px; 
+            border-radius: 10px; 
+            text-align: center; 
+            width: 300px; 
+        }
+
+        h1 {
+            font-size: 22px;
+            margin-bottom: 30px;
+        }
+
+        .campo {
+            text-align: left; 
+            margin-bottom: 20px; 
+        }
+
+        label {
+            display: block; 
+            margin-bottom: 5px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%; 
+            padding: 10px;
+            border-radius: 5px; 
+            border: none; 
+            box-sizing: border-box; 
+        }
+
+        button {
+            background-color: #8b1022; /* Le dimos un color de fondo sólido para que resalte */
+            color: white;
+            border: none; /* Esta es la instrucción que quita cualquier borde */
+            padding: 10px 40px;
+            border-radius: 20px; 
+            font-weight: bold;
+            cursor: pointer; 
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="caja-formulario">
+        
+        <h1>INICIO DE SESIÓN</h1>
+
+        <div class="campo">
+            <label>correo o usuario</label>
+            <input type="text" placeholder="correo o usuario">
+        </div>
+
+        <div class="campo">
+            <label>contraseña</label>
+            <input type="password" placeholder="contraseña">
+        </div>
+
+        <button onclick="window.location.href='Buscador.html'">INGRESAR</button>
+    </div>
+
+</body>
+</html

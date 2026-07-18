@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de Videojuegos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: white;
+            color: black;
+        }
+
+        .barra-busqueda {
+            display: flex;
+            align-items: center;
+            border: 2px solid black;
+            border-radius: 25px;
+            padding: 10px 15px;
+            margin-bottom: 20px;
+            max-width: 600px;
+        }
+        .input-busqueda {
+            border: none;
+            flex-grow: 1;
+            padding: 0 10px;
+            outline: none;
+            font-size: 16px;
+        }
+
+        .banner-container {
+            width: 100%;
+            max-width: 800px;
+            margin-bottom: 20px;
+        }
+        .banner-container img {
+            width: 100%;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        h2 {
+            margin-bottom: 10px;
+            font-size: 22px;
+        }
+
+        .contenedor-categorias {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .boton-categoria {
+            background-color: black;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .boton-categoria:hover {
+            background-color: #333;
+        }
+
+        .lista-juegos {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .juego-tarjeta {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 10px;
+            width: 150px;
+            text-align: left;
+            display: block; 
+        }
+        .juego-tarjeta img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .juego-titulo {
+            font-weight: bold;
+            font-size: 14px;
+            margin: 10px 0 5px 0;
+        }
+        .juego-categoria {
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 5px;
+        }
+        .juego-precio {
+            color: green;
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        .boton-ver {
+            background-color: black;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 15px;
+            cursor: pointer;
+            font-weight: bold;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <button class="boton-volver" onclick="window.location.href='Iniciodesesion.html'">←</button>
+
+    <div class="barra-busqueda">
+        <span>🔍</span>
+        <input type="text" class="input-busqueda" placeholder="Buscar...">
+        <span>🎤</span>
+    </div>
+
+    <div class="banner-container">
+        <img src="img/gears5.png" alt="Gears 5 Banner">
+    </div>
+
+    <h2>Categorías</h2>
+    
+    <div class="contenedor-categorias">
+        <button class="boton-categoria" onclick="filtrar('Todos')">Todos</button>
+        <button class="boton-categoria" onclick="filtrar('Acción')">Acción</button>
+        <button class="boton-categoria" onclick="filtrar('Aventura')">Aventura</button>
+        <button class="boton-categoria" onclick="filtrar('Deportes')">Deportes</button>
+    </div>
+
+    <h2>Juegos Destacados</h2>
+
+    <div class="lista-juegos">
+        
+        <div class="juego-tarjeta" data-categoria="Deportes">
+            <img src="img/RocketLeague.jpg" alt="Rocket League">
+            <div class="juego-titulo">Rocket League</div>
+            <div class="juego-categoria">Deportes</div>
+            <div class="juego-precio">$100</div>
+            <button class="boton-ver" onclick="window.location.href='compra.html'">Ver</button>
+        </div>
+
+        <div class="juego-tarjeta" data-categoria="Aventura">
+            <img src="img/Minecraft.jpg" alt="Minecraft">
+            <div class="juego-titulo">Minecraft</div>
+            <div class="juego-categoria">Aventura</div>
+            <div class="juego-precio">$120</div>
+            <button class="boton-ver" onclick="window.location.href='compra.html'">Ver</button>
+        </div>
+
+        <div class="juego-tarjeta" data-categoria="Acción">
+            <img src="img/MortalKombat1.jpg" alt="Mortal Kombat">
+            <div class="juego-titulo">Mortal Kombat</div>
+            <div class="juego-categoria">Acción</div>
+            <div class="juego-precio">$200</div>
+            <button class="boton-ver" onclick="window.location.href='compra.html'">Ver</button>
+        </div>
+
+    </div>
+
+    <script>
+        function filtrar(categoriaSeleccionada) {
+            let juegos = document.querySelectorAll('.juego-tarjeta');
+
+            juegos.forEach(juego => {
+                let categoriaDelJuego = juego.getAttribute('data-categoria');
+
+                if (categoriaSeleccionada === 'Todos' || categoriaDelJuego === categoriaSeleccionada) {
+                    juego.style.display = 'block';
+                } else {
+                    juego.style.display = 'none';
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>

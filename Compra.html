@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Catálogo de Juegos</title>
+    <style>
+
+        body { 
+            font-family: Arial, sans-serif; 
+            background-color: #f0f2f5; 
+            margin: 0;
+            padding: 40px 20px;
+        }
+
+        .boton-volver {
+
+            background-color: #f0f0f0; 
+            width: 40px;
+            height: 40px;
+            border-radius: 50%; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: none;
+            cursor: pointer;
+            font-size: 20px;
+            margin-bottom: 15px; 
+        }
+        h1 {
+            text-align: center;
+            color: #1a1a1a;
+            margin-bottom: 40px;
+        }
+
+
+        .seccion-catalogo {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px; 
+        }
+
+        .contenedor-movil { 
+            background-color: #ffffff; 
+            width: 320px; 
+            padding: 20px; 
+            border-radius: 15px; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .imagen-producto { 
+            width: 100%; 
+            height: 250px; 
+            object-fit: cover;
+            border-radius: 12px; 
+            margin-bottom: 15px; 
+        }
+
+
+        .titulo-juego {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #000000;
+        }
+
+        .texto-info { 
+            margin-bottom: 8px; 
+            font-size: 14px; 
+            color: #444444;
+            line-height: 1.4; 
+        }
+
+        .precio { 
+            font-size: 18px; 
+            font-weight: bold; 
+            color: #000000; 
+            margin: 15px 0; 
+        }
+
+
+        .boton-comprar {
+            width: 100%;
+            padding: 14px;
+            background-color: #000000; 
+            color: #ffffff;
+            border: none;
+            border-radius: 25px; 
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .boton-comprar:hover {
+            background-color: #333333;
+        }
+    </style>
+</head>
+<body>
+
+    <button class="boton-volver" onclick="window.location.href='Buscador.html'">←</button>
+    <h1>Catálogo de Videojuegos</h1>
+
+    <div class="seccion-catalogo">
+
+        <div class="contenedor-movil">
+            <img src="img/Minecraft.jpg" alt="Minecraft" class="imagen-producto">
+            <div class="titulo-juego">Minecraft</div>
+            <div class="texto-info"><strong>Categoría:</strong> Aventura</div>
+            <div class="texto-info"><strong>Descripción:</strong> Un videojuego de construcción de mundo abierto donde los jugadores extraen recursos y crean bloques tridimensionales.</div>
+            <div class="precio">$120</div>
+            <button class="boton-comprar" onclick="window.location.href='Pago.html'">Comprar</button>
+        </div>
+
+        <div class="contenedor-movil">
+            <img src="img/RocketLeague.jpg" alt="RocketLeague" class="imagen-producto">
+            <div class="titulo-juego">Rocket League</div>
+            <div class="texto-info"><strong>Categoría:</strong> Deportes</div>
+            <div class="texto-info"><strong>Descripción:</strong> es un popular videojuego que combina el fútbol con la conducción de vehículos</div>
+            <div class="precio">$100</div>
+            <button class="boton-comprar" onclick="window.location.href='Pago.html'">Comprar</button>
+        </div>
+
+        <div class="contenedor-movil">
+            <img src="img/MortalKombat1.jpg" alt="Mortal Kombat 1" class="imagen-producto">
+            <div class="titulo-juego">Mortal Kombat 1</div>
+            <div class="texto-info"><strong>Categoría:</strong> Accion</div>
+            <div class="texto-info"><strong>Descripción:</strong>  es el reinicio y duodécima entrega principal de la famosa franquicia de lucha desarrollada por NetherRealm Studios</div>
+            <div class="precio">$200</div>
+            <button class="boton-comprar" onclick="window.location.href='Pago.html'">Comprar</button>
+        </div>
+
+    </div>
+
+</body>
+</html>

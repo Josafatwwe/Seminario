@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Juegos</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 10px;
+            background-color: white;
+            color: black;
+        }
+
+        .boton-volver {
+            background-color: #f0f0f0; 
+            width: 40px;
+            height: 40px;
+            border-radius: 50%; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: none;
+            cursor: pointer;
+            font-size: 20px;
+            margin-bottom: 15px; 
+        }
+
+   
+        .barra-busqueda {
+            display: flex; 
+            align-items: center;
+            border: 2px solid black;
+            border-radius: 25px; 
+            padding: 10px 15px;
+            margin-bottom: 20px;
+        }
+
+        .icono {
+            font-size: 20px;
+        }
+
+        .input-busqueda {
+            border: none;
+            flex-grow: 1; 
+            padding: 0 10px;
+            outline: none;
+            font-size: 16px;
+        }
+
+
+        .titulo {
+            text-align: center; 
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+ 
+        .fila-juego {
+            display: flex; 
+            align-items: center; 
+            margin-bottom: 15px; 
+            padding-bottom: 10px;
+        }
+
+        .imagen-juego {
+            width: 80px;
+            height: 80px;
+            border-radius: 10px; 
+            object-fit: cover; 
+        }
+
+        .info-juego {
+            flex-grow: 1; 
+            margin-left: 15px;
+        }
+
+        .nombre-juego {
+            font-size: 14px;
+            color: #333;
+        }
+
+        .precio-juego {
+            font-size: 14px;
+            color: #333;
+            margin-top: 3px;
+        }
+
+        .boton-comprar {
+            background-color: black; 
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 8px 15px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+   <button class="boton-volver" onclick="window.location.href='Buscador.html'">←</button>
+
+    <div class="barra-busqueda">
+        <span class="icono">🔍</span>
+        <input type="text" class="input-busqueda">
+        <span class="icono">🎤</span>
+    </div>
+
+    <h1 class="titulo">Catalogo</h1>
+
+    <div class="lista-juegos">
+        
+        <div class="fila-juego">
+            <img src="img/RocketLeague.jpg" alt="Rocket League" class="imagen-juego">
+            <div class="info-juego">
+                <div class="nombre-juego">Rocket League</div>
+                <div class="precio-juego">$100</div>
+            </div>
+            <button class="boton-comprar" onclick="window.location.href='Compra.html'">Comprar</button>
+        </div>
+
+        <div class="fila-juego">
+            <img src="img/Minecraft.jpg" alt="Minecraft" class="imagen-juego">
+            <div class="info-juego">
+                <div class="nombre-juego">Minecraft</div>
+                <div class="precio-juego">$120</div>
+            </div>
+           <button class="boton-comprar" onclick="window.location.href='Compra.html'">Comprar</button>
+        </div>
+
+        <div class="fila-juego">
+            <img src="img/MortalKombat1.jpg" alt="Mortal Kombat" class="imagen-juego">
+            <div class="info-juego">
+                <div class="nombre-juego">Mortal Kombat I</div>
+                <div class="precio-juego">$200</div>
+            </div>
+            <button class="boton-comprar" onclick="window.location.href='Compra.html'">Comprar</button>
+        </div>
+
+    </div>
+
+</body>
+</html>
